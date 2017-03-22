@@ -77,3 +77,5 @@ ASCITES = False:
     BIGLIVER = False:
         Category live, prob = 100% : /1
 
+
+# prob = 100% : /1  => probability = 100% (1 out of *** training instances)
