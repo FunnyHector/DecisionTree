@@ -1,13 +1,17 @@
-class DecisionTreeBuilder
+class DecisionTree
+  def run_decision_tree_learning(training_set)
+    attributes = HepatitisInstance::ATTRIBUTES_NAMES.clone
+    @tree_root = build_tree(training_set, attributes)
+  end
 
-  def self.build_tree(instances, attributes)
+  def build_tree(instances, attributes)
     if instances.empty? # instances is empty
       # return a leaf node containing the name and probability of the overall most
       # probable class (ie, the "baseline" predictor)
 
     end
 
-    if is_pure?(instances) # instances is pure
+    if instances_pure?(instances) # instances is pure
       # return a leaf node containing the name of the class of the instances
       # in the node and probability 100% or 1
 
@@ -39,37 +43,30 @@ class DecisionTreeBuilder
 
       # return Node containing (best_attribute, left_node, right_node)
     end
-
-
   end
 
-
-
-
-  private
-
-  def self.is_pure?(instances)
-
+  def categorise_test_set!(test_set)
+    test_set.each { |instance| categorise!(instance) } unless @tree_root.nil?
   end
 
-  def self.weighted_average_purity_is_best?
-
-  end
-
-
-end
-
-class DecisionTreeBuilder::Node
-  attr_accessor :left_node, :right_node, :attribute_name, :probability
-
-  def initialize(left_node, right_node, attribute_name, probability = nil)
-    self.left_node      = left_node
-    self.right_node     = right_node
-    self.attribute_name = attribute_name
-    self.probability    = probability
+  def categorise!(instance)
+    # TODO
   end
 
   def to_s
-    # recursively print the tree out
+    return "Decision tree not learned yet" if @tree_root.nil?
+    @tree_root.to_s
   end
+
+  private
+
+  def instances_pure?(instances)
+    # TODO
+  end
+
+  def weighted_average_purity_is_best?
+    # TODO
+  end
+
 end
+

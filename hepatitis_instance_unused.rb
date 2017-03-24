@@ -1,5 +1,5 @@
-class HepatitisInstanceBeta
-  ATTRIBUTES_NAMES = %w(age female steroid antivirals fatigue malaise anorexia bigliver firmliver spleenpalpable spiders ascites varices bilirubin sgot histology)
+class HepatitisInstanceUnused
+  ATTRIBUTES_NAMES = %w(age female steroid antivirals fatigue malaise anorexia bigliver firmliver spleenpalpable spiders ascites varices bilirubin sgot histology).freeze
 
   attr_accessor :category, :attributes
 
