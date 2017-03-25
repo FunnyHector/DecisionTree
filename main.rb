@@ -1,5 +1,7 @@
 require "./hepatitis_instance.rb"
-require "./decision_tree_builder.rb"
+require "./decision_tree.rb"
+require "./decision_tree_node.rb"
+require "./decision_tree_printer.rb"
 
 DEFAULT_TRAINING_SET_FILE = "data/hepatitis-training.dat".freeze
 DEFAULT_TEST_SET_FILE     = "data/hepatitis-test.dat".freeze
@@ -19,7 +21,7 @@ end
 
 def to_boolean(string)
   { "true" => true, "false" => false, "live" => "live", "die" => "die" }.fetch(string.downcase)
-rescue KeyError => e
+rescue KeyError => _
   abort("Error occurred when reading file, unknown value: \"#{string}\".")
 end
 
@@ -35,7 +37,14 @@ test_set     = read_file(test_set_file)
 decision_tree = DecisionTree.new
 
 decision_tree.run_decision_tree_learning(training_set)
-result = decision_tree.categorise_test_set!(test_set)
+
+puts DecisionTreePrinter.new(decision_tree.tree_root).render_tree
+
+
+
+
+
+# result = decision_tree.categorise_test_set!(test_set)
 
 
 

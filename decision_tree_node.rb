@@ -1,15 +1,20 @@
 class DecisionTreeNode
-  attr_accessor :left_node, :right_node, :parent_node, :attribute_name, :probability
+  class InternalNode < DecisionTreeNode
+    attr_accessor :true_node, :false_node, :attribute_name
 
-  def initialize(left_node, right_node, parent_node, attribute_name, probability = nil)
-    self.left_node      = left_node
-    self.right_node     = right_node
-    self.parent_node    = parent_node   # might not be used
-    self.attribute_name = attribute_name
-    self.probability    = probability
+    def initialize(true_node:, false_node:, attribute_name:)
+      self.true_node      = true_node
+      self.false_node     = false_node
+      self.attribute_name = attribute_name
+    end
   end
 
-  def to_s
-    # TODO: recursively print the tree out
+  class Leaf < DecisionTreeNode
+    attr_accessor :category, :probability
+
+    def initialize(category:, probability:)
+      self.category    = category
+      self.probability = probability
+    end
   end
 end
