@@ -58,14 +58,11 @@ class DecisionTreePrinter
         if is_internal_node
           result << "[#{node[:attribute_name]}]\n"
         elsif is_leaf
-          result << "Category: #{node[:category]}, probability: #{node[:probability]}\n"
+          result << "Category: #{node[:category]}, probability: #{float_to_percent(node[:probability])}, proportion: #{node[:proportion]}\n"
         end
 
         # deal with anchor pos array
-        if is_internal_node
-          # internal node
-          anchor_positions.push(node[:level])
-        end
+        anchor_positions.push(node[:level]) if is_internal_node
       end
     end
 
@@ -82,7 +79,11 @@ class DecisionTreePrinter
       walk_tree(true, node.true_node, level + 1)
       walk_tree(false, node.false_node, level + 1)
     elsif node.is_a?(DecisionTreeNode::Leaf)
-      @nodes << { path: path, level: level, category: node.category, probability: node.probability }
+      @nodes << { path: path, level: level, category: node.category, probability: node.probability, proportion: node.proportion }
     end
+  end
+
+  def float_to_percent(float)
+    "#{format("%.2f", (float * 100))}%"
   end
 end

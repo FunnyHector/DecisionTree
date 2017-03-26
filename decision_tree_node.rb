@@ -10,11 +10,12 @@ class DecisionTreeNode
   end
 
   class Leaf < DecisionTreeNode
-    attr_accessor :category, :probability
+    attr_accessor :category, :probability, :proportion
 
-    def initialize(category:, probability:)
+    def initialize(category:, probability:, proportion:)
       self.category    = category
       self.probability = probability
+      self.proportion  = proportion
     end
   end
 end
