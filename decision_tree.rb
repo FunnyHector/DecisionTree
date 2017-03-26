@@ -1,4 +1,6 @@
 class DecisionTree
+  attr_reader :tree_root
+
   def run_decision_tree_learning(training_set)
     attributes = HepatitisInstance::ATTRIBUTES_NAMES.clone
     categories_count = count_categories(training_set)

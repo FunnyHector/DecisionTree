@@ -30,11 +30,11 @@ training_set_file = ARGV[0].nil? ? DEFAULT_TRAINING_SET_FILE : ARGV[0]
 test_set_file     = ARGV[1].nil? ? DEFAULT_TEST_SET_FILE : ARGV[1]
 
 # read in the training file & the test file
-training_set      = read_file(training_set_file)
-test_set          = read_file(test_set_file)
+training_set = read_file(training_set_file)
+test_set     = read_file(test_set_file)
 
 # initialise the decision tree and run magic!
-decision_tree     = DecisionTree.new
+decision_tree = DecisionTree.new
 
 # decision tree learning
 decision_tree.run_decision_tree_learning(training_set)
@@ -42,6 +42,7 @@ decision_tree.run_decision_tree_learning(training_set)
 # print the tree
 ascii_tree = DecisionTreePrinter.new(decision_tree.tree_root).render_tree
 File.write("./tree.txt", ascii_tree)
+puts "[NOTICE] Console output might look ugly because of auto-line-wrap. See \"tree.txt\" generated\n"
 puts ascii_tree
 puts "\n=======================================================\n"
 puts "\"tree.txt\" is generated.\n\n"
