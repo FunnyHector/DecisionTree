@@ -29,5 +29,8 @@ No.  given_category  category_based_on_decision_tree
 27  live  live
 ======================== Summary =========================
 Test set size: 27
-Correct vs. Incorrect ratio: 24 vs. 3
-Accuracy: 88.89%
+ - Correct vs. Incorrect ratio by decision tree: 24 vs. 3
+   Accuracy of decision tree: 88.89%
+ - Baseline probability: 80.00%
+   Correct vs. Incorrect ratio by baseline predictor: 23 vs. 4
+   Accuracy of baseline predictor: 85.19%

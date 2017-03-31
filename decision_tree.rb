@@ -93,8 +93,17 @@ class DecisionTree
 
     result << "======================== Summary =========================\n"
     result << "Test set size: #{@test_set.size}\n"
-    result << "Correct vs. Incorrect ratio: #{num_correct} vs. #{num_incorrect}\n"
-    result << "Accuracy: #{accuracy}%\n"
+    result << " - Correct vs. Incorrect ratio by decision tree: #{num_correct} vs. #{num_incorrect}\n"
+    result << "   Accuracy of decision tree: #{accuracy}%\n"
+
+    num_correct_baseline        = @test_set.count { |instance| @baseline_category == instance.given_category }
+    num_incorrect_baseline      = @test_set.size - num_correct_baseline
+    accuracy_baseline           = format("%.2f", ((num_correct_baseline.to_f / @test_set.size) * 100))
+    baseline_probability_format = format("%.2f", @baseline_probability * 100)
+
+    result << " - Baseline probability: #{baseline_probability_format}%\n"
+    result << "   Correct vs. Incorrect ratio by baseline predictor: #{num_correct_baseline} vs. #{num_incorrect_baseline}\n"
+    result << "   Accuracy of baseline predictor: #{accuracy_baseline}%\n"
 
     result
   end
