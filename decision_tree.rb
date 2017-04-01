@@ -1,5 +1,5 @@
 class DecisionTree
-  attr_reader :tree_root
+  attr_reader :tree_root, :summary_figures
 
   def run_decision_tree_learning(training_set)
     attributes = HepatitisInstance::ATTRIBUTES_NAMES.clone
@@ -74,38 +74,53 @@ class DecisionTree
     raise "Decision tree is not learned yet" if @tree_root.nil?
 
     @test_set = test_set
-    @test_set.each { |instance| categorise!(instance) } unless @tree_root.nil?
+    @test_set.each { |instance| categorise!(instance) }
+
+    summary  # summarise figures
+  end
+
+  def summary
+    @num_incorrect_d_tree = @test_set.count(&:categorisation_mismatched?)
+    @num_correct_d_tree   = @test_set.size - @num_incorrect_d_tree
+    @accuracy_d_tree      = format("%.2f", ((@num_correct_d_tree.to_f / @test_set.size) * 100))
+
+    @num_correct_baseline        = @test_set.count { |instance| @baseline_category == instance.given_category }
+    @num_incorrect_baseline      = @test_set.size - @num_correct_baseline
+    @accuracy_baseline           = format("%.2f", ((@num_correct_baseline.to_f / @test_set.size) * 100))
+    @baseline_probability_format = format("%.2f", @baseline_probability * 100)
+
+    @summary_figures = {
+        test_set_size:           @test_set.size,
+        decision_tree_correct:   @num_correct_d_tree,
+        decision_tree_incorrect: @num_incorrect_d_tree,
+        decision_tree_accuracy:  @accuracy_d_tree,
+        baseline_probability:    @baseline_probability_format,
+        baseline_correct:        @num_correct_baseline,
+        baseline_incorrect:      @num_incorrect_baseline,
+        baseline_accuracy:       @accuracy_baseline,
+    }
   end
 
   def result
-    result =  "========== Results of categorisation (test set) ==========\n"
-    result << "No.  given_category  category_based_on_decision_tree\n"
+    @result =  "========== Results of categorisation (test set) ==========\n"
+    @result << "No.  given_category  category_based_on_decision_tree\n"
 
     @test_set.each_with_index do |instance, index|
-      result << "#{format("%02d", index + 1)}  #{instance.given_category}  #{instance.categorised_category}"
-      result << "    # categorisation mismatched" if instance.categorisation_mismatched?
-      result << "\n"
+      @result << "#{format("%02d", index + 1)}  #{instance.given_category}  #{instance.categorised_category}"
+      @result << "    # categorisation mismatched" if instance.categorisation_mismatched?
+      @result << "\n"
     end
 
-    num_incorrect = @test_set.count(&:categorisation_mismatched?)
-    num_correct   = @test_set.size - num_incorrect
-    accuracy      = format("%.2f", ((num_correct.to_f / @test_set.size) * 100))
+    @result << "======================== Summary =========================\n"
+    @result << "Test set size: #{@test_set.size}\n"
+    @result << " - Correct vs. Incorrect ratio by decision tree: #{@num_correct_d_tree} vs. #{@num_incorrect_d_tree}\n"
+    @result << "   Accuracy of decision tree: #{@accuracy_d_tree}%\n"
 
-    result << "======================== Summary =========================\n"
-    result << "Test set size: #{@test_set.size}\n"
-    result << " - Correct vs. Incorrect ratio by decision tree: #{num_correct} vs. #{num_incorrect}\n"
-    result << "   Accuracy of decision tree: #{accuracy}%\n"
+    @result << " - Baseline probability: #{@baseline_probability_format}% probability as #{@baseline_category}\n"
+    @result << "   Correct vs. Incorrect ratio by baseline predictor: #{@num_correct_baseline} vs. #{@num_incorrect_baseline}\n"
+    @result << "   Accuracy of baseline predictor: #{@accuracy_baseline}%\n"
 
-    num_correct_baseline        = @test_set.count { |instance| @baseline_category == instance.given_category }
-    num_incorrect_baseline      = @test_set.size - num_correct_baseline
-    accuracy_baseline           = format("%.2f", ((num_correct_baseline.to_f / @test_set.size) * 100))
-    baseline_probability_format = format("%.2f", @baseline_probability * 100)
-
-    result << " - Baseline probability: #{baseline_probability_format}%\n"
-    result << "   Correct vs. Incorrect ratio by baseline predictor: #{num_correct_baseline} vs. #{num_incorrect_baseline}\n"
-    result << "   Accuracy of baseline predictor: #{accuracy_baseline}%\n"
-
-    result
+    @result
   end
 
   private

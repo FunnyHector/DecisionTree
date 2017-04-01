@@ -1,0 +1,14 @@
+==================== Overall Summary =====================
+  No.  decision_tree_accuracy  baseline_accuracy
+  01  78.38%  91.89%
+  02  89.19%  89.19%
+  03  91.89%  86.49%
+  04  75.68%  78.38%
+  05  91.89%  89.19%
+  06  89.19%  78.38%
+  07  78.38%  89.19%
+  08  75.68%  86.49%
+  09  75.68%  83.78%
+  10  78.38%  81.08%
+Average of decision tree accuracies: 82.43%
+Average of baseline accuracies: 85.41%
