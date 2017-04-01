@@ -1,165 +1,141 @@
 [ascites]
  |-true--> [spiders]
  |          |-true--> [varices]
- |          |          |-true--> [antivirals]
- |          |          |          |-true--> [bigliver]
- |          |          |          |          |-true--> [female]
- |          |          |          |          |          |-true--> Category: live, probability: 100.00%, proportion: 4 / 4
- |          |          |          |          |          `-false-> [spleenpalpable]
- |          |          |          |          |                     |-true--> [anorexia]
- |          |          |          |          |                     |          |-true--> [malaise]
- |          |          |          |          |                     |          |          |-true--> [sgot]
- |          |          |          |          |                     |          |          |          |-true--> Category: live, probability: 100.00%, proportion: 5 / 5
- |          |          |          |          |                     |          |          |          `-false-> [age]
- |          |          |          |          |                     |          |          |                     |-true--> Category: live, probability: 100.00%, proportion: 8 / 8
- |          |          |          |          |                     |          |          |                     `-false-> [fatigue]
- |          |          |          |          |                     |          |          |                                |-true--> [bilirubin]
- |          |          |          |          |                     |          |          |                                |          |-true--> Category: live, probability: 100.00%, proportion: 5 / 5
- |          |          |          |          |                     |          |          |                                |          `-false-> [steroid]
- |          |          |          |          |                     |          |          |                                |                     |-true--> Category: live, probability: 100.00%, proportion: 7 / 7
- |          |          |          |          |                     |          |          |                                |                     `-false-> [firmliver]
- |          |          |          |          |                     |          |          |                                |                                |-true--> Category: live, probability: 100.00%, proportion: 2 / 2
- |          |          |          |          |                     |          |          |                                |                                `-false-> Category: die, probability: 100.00%, proportion: 1 / 1
- |          |          |          |          |                     |          |          |                                `-false-> Category: live, probability: 100.00%, proportion: 5 / 5
- |          |          |          |          |                     |          |          `-false-> Category: live, probability: 100.00%, proportion: 4 / 4
- |          |          |          |          |                     |          `-false-> Category: live, probability: 100.00%, proportion: 4 / 4
- |          |          |          |          |                     `-false-> Category: live, probability: 100.00%, proportion: 4 / 4
- |          |          |          |          `-false-> Category: live, probability: 100.00%, proportion: 4 / 4
- |          |          |          `-false-> [spleenpalpable]
- |          |          |                     |-true--> [sgot]
- |          |          |                     |          |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
- |          |          |                     |          `-false-> [anorexia]
- |          |          |                     |                     |-true--> [histology]
- |          |          |                     |                     |          |-true--> Category: live, probability: 100.00%, proportion: 2 / 2
- |          |          |                     |                     |          `-false-> [age]
- |          |          |                     |                     |                     |-true--> Category: live, probability: 100.00%, proportion: 2 / 2
- |          |          |                     |                     |                     `-false-> [bigliver]
- |          |          |                     |                     |                                |-true--> [female]
- |          |          |                     |                     |                                |          |-true--> Category: live, probability: 100.00%, proportion: 3 / 3
- |          |          |                     |                     |                                |          `-false-> [fatigue]
- |          |          |                     |                     |                                |                     |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
- |          |          |                     |                     |                                |                     `-false-> [steroid]
- |          |          |                     |                     |                                |                                |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
- |          |          |                     |                     |                                |                                `-false-> [malaise]
- |          |          |                     |                     |                                |                                           |-true--> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
- |          |          |                     |                     |                                |                                           `-false-> [firmliver]
- |          |          |                     |                     |                                |                                                      |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
- |          |          |                     |                     |                                |                                                      `-false-> Category: die, probability: 100.00%, proportion: 1 / 1
- |          |          |                     |                     |                                `-false-> Category: live, probability: 100.00%, proportion: 2 / 2
- |          |          |                     |                     `-false-> Category: live, probability: 100.00%, proportion: 2 / 2
- |          |          |                     `-false-> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
+ |          |          |-true--> [female]
+ |          |          |          |-true--> Category: live, probability: 100.00%, proportion: 6 / 6
+ |          |          |          `-false-> [anorexia]
+ |          |          |                     |-true--> [bigliver]
+ |          |          |                     |          |-true--> [spleenpalpable]
+ |          |          |                     |          |          |-true--> [age]
+ |          |          |                     |          |          |          |-true--> Category: live, probability: 100.00%, proportion: 7 / 7
+ |          |          |                     |          |          |          `-false-> [sgot]
+ |          |          |                     |          |          |                     |-true--> Category: live, probability: 100.00%, proportion: 8 / 8
+ |          |          |                     |          |          |                     `-false-> [histology]
+ |          |          |                     |          |          |                                |-true--> Category: live, probability: 100.00%, proportion: 5 / 5
+ |          |          |                     |          |          |                                `-false-> [fatigue]
+ |          |          |                     |          |          |                                           |-true--> Category: live, probability: 100.00%, proportion: 10 / 10
+ |          |          |                     |          |          |                                           `-false-> [malaise]
+ |          |          |                     |          |          |                                                      |-true--> Category: live, probability: 100.00%, proportion: 4 / 4
+ |          |          |                     |          |          |                                                      `-false-> [steroid]
+ |          |          |                     |          |          |                                                                 |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
+ |          |          |                     |          |          |                                                                 `-false-> [bilirubin]
+ |          |          |                     |          |          |                                                                            |-true--> [antivirals]
+ |          |          |                     |          |          |                                                                            |          |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
+ |          |          |                     |          |          |                                                                            |          `-false-> [firmliver]
+ |          |          |                     |          |          |                                                                            |                     |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
+ |          |          |                     |          |          |                                                                            |                     `-false-> Category: die, probability: 100.00%, proportion: 1 / 1
+ |          |          |                     |          |          |                                                                            `-false-> Category: live, probability: 100.00%, proportion: 1 / 1
+ |          |          |                     |          |          `-false-> Category: live, probability: 100.00%, proportion: 5 / 5
+ |          |          |                     |          `-false-> Category: live, probability: 100.00%, proportion: 6 / 6
+ |          |          |                     `-false-> Category: live, probability: 100.00%, proportion: 7 / 7
  |          |          `-false-> Category: die, probability: 100.00%, proportion: 1 / 1
- |          `-false-> [firmliver]
- |                     |-true--> [age]
- |                     |          |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
- |                     |          `-false-> [sgot]
- |                     |                     |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
- |                     |                     `-false-> [female]
- |                     |                                |-true--> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
- |                     |                                `-false-> [bigliver]
- |                     |                                           |-true--> [fatigue]
- |                     |                                           |          |-true--> Category: die, probability: 100.00%, proportion: 1 / 1
- |                     |                                           |          `-false-> [malaise]
- |                     |                                           |                     |-true--> Category: die, probability: 100.00%, proportion: 1 / 1
- |                     |                                           |                     `-false-> [varices]
- |                     |                                           |                                |-true--> [steroid]
- |                     |                                           |                                |          |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
- |                     |                                           |                                |          `-false-> Category: die, probability: 100.00%, proportion: 2 / 2
- |                     |                                           |                                `-false-> Category: die, probability: 100.00%, proportion: 1 / 1
- |                     |                                           `-false-> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
- |                     `-false-> [spleenpalpable]
- |                                |-true--> [age]
- |                                |          |-true--> [antivirals]
- |                                |          |          |-true--> [varices]
- |                                |          |          |          |-true--> [fatigue]
- |                                |          |          |          |          |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
- |                                |          |          |          |          `-false-> [bilirubin]
- |                                |          |          |          |                     |-true--> [female]
- |                                |          |          |          |                     |          |-true--> Category: live, probability: 100.00%, proportion: 2 / 2
- |                                |          |          |          |                     |          `-false-> Category: die, probability: 100.00%, proportion: 1 / 1
- |                                |          |          |          |                     `-false-> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
- |                                |          |          |          `-false-> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
- |                                |          |          `-false-> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
- |                                |          `-false-> [female]
- |                                |                     |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
- |                                |                     `-false-> [antivirals]
- |                                |                                |-true--> [bilirubin]
- |                                |                                |          |-true--> [fatigue]
- |                                |                                |          |          |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
- |                                |                                |          |          `-false-> [steroid]
- |                                |                                |          |                     |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
- |                                |                                |          |                     `-false-> [bigliver]
- |                                |                                |          |                                |-true--> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
- |                                |                                |          |                                `-false-> [malaise]
- |                                |                                |          |                                           |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
- |                                |                                |          |                                           `-false-> [anorexia]
- |                                |                                |          |                                                      |-true--> [varices]
- |                                |                                |          |                                                      |          |-true--> [sgot]
- |                                |                                |          |                                                      |          |          |-true--> Category: die, probability: 100.00%, proportion: 1 / 1
- |                                |                                |          |                                                      |          |          `-false-> Category: live, probability: 100.00%, proportion: 1 / 1
- |                                |                                |          |                                                      |          `-false-> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
- |                                |                                |          |                                                      `-false-> Category: live, probability: 100.00%, proportion: 1 / 1
- |                                |                                |          `-false-> Category: live, probability: 100.00%, proportion: 1 / 1
- |                                |                                `-false-> Category: live, probability: 100.00%, proportion: 2 / 2
- |                                `-false-> [sgot]
- |                                           |-true--> [female]
- |                                           |          |-true--> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
- |                                           |          `-false-> [antivirals]
- |                                           |                     |-true--> [fatigue]
- |                                           |                     |          |-true--> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
- |                                           |                     |          `-false-> [bilirubin]
- |                                           |                     |                     |-true--> [age]
- |                                           |                     |                     |          |-true--> [steroid]
- |                                           |                     |                     |          |          |-true--> Category: die, probability: 100.00%, proportion: 1 / 1
- |                                           |                     |                     |          |          `-false-> [malaise]
- |                                           |                     |                     |          |                     |-true--> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
- |                                           |                     |                     |          |                     `-false-> [anorexia]
- |                                           |                     |                     |          |                                |-true--> Category: die, probability: 100.00%, proportion: 1 / 1
- |                                           |                     |                     |          |                                `-false-> Category: live, probability: 100.00%, proportion: 1 / 1
- |                                           |                     |                     |          `-false-> Category: die, probability: 100.00%, proportion: 1 / 1
- |                                           |                     |                     `-false-> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
- |                                           |                     `-false-> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
- |                                           `-false-> Category: live, probability: 100.00%, proportion: 2 / 2
- `-false-> [steroid]
-            |-true--> [female]
-            |          |-true--> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
-            |          `-false-> [antivirals]
-            |                     |-true--> [fatigue]
-            |                     |          |-true--> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
-            |                     |          `-false-> [bilirubin]
-            |                     |                     |-true--> [histology]
-            |                     |                     |          |-true--> [age]
-            |                     |                     |          |          |-true--> Category: die, probability: 100.00%, proportion: 1 / 1
-            |                     |                     |          |          `-false-> [spiders]
-            |                     |                     |          |                     |-true--> Category: die, probability: 100.00%, proportion: 1 / 1
-            |                     |                     |          |                     `-false-> [anorexia]
-            |                     |                     |          |                                |-true--> [malaise]
-            |                     |                     |          |                                |          |-true--> [bigliver]
-            |                     |                     |          |                                |          |          |-true--> Category: die, probability: 100.00%, proportion: 1 / 1
-            |                     |                     |          |                                |          |          `-false-> Category: live, probability: 100.00%, proportion: 1 / 1
-            |                     |                     |          |                                |          `-false-> Category: die, probability: 100.00%, proportion: 1 / 1
-            |                     |                     |          |                                `-false-> Category: die, probability: 100.00%, proportion: 2 / 2
-            |                     |                     |          `-false-> Category: die, probability: 100.00%, proportion: 1 / 1
-            |                     |                     `-false-> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
-            |                     `-false-> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
-            `-false-> [firmliver]
-                       |-true--> [age]
-                       |          |-true--> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
-                       |          `-false-> [female]
-                       |                     |-true--> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
-                       |                     `-false-> [antivirals]
-                       |                                |-true--> [fatigue]
-                       |                                |          |-true--> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
-                       |                                |          `-false-> [malaise]
-                       |                                |                     |-true--> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
-                       |                                |                     `-false-> [bigliver]
-                       |                                |                                |-true--> [spleenpalpable]
-                       |                                |                                |          |-true--> [varices]
-                       |                                |                                |          |          |-true--> [anorexia]
-                       |                                |                                |          |          |          |-true--> Category: die, probability: 100.00%, proportion: 1 / 1
-                       |                                |                                |          |          |          `-false-> Category: live, probability: 100.00%, proportion: 2 / 2
-                       |                                |                                |          |          `-false-> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
-                       |                                |                                |          `-false-> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
-                       |                                |                                `-false-> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
-                       |                                `-false-> Category: live, probability: 80.00%, proportion: 88 / 110  # baseline predictor
-                       `-false-> Category: die, probability: 100.00%, proportion: 1 / 1
+ |          `-false-> [sgot]
+ |                     |-true--> [bigliver]
+ |                     |          |-true--> [female]
+ |                     |          |          |-true--> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+ |                     |          |          `-false-> [fatigue]
+ |                     |          |                     |-true--> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+ |                     |          |                     `-false-> [age]
+ |                     |          |                                |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
+ |                     |          |                                `-false-> [malaise]
+ |                     |          |                                           |-true--> [anorexia]
+ |                     |          |                                           |          |-true--> [steroid]
+ |                     |          |                                           |          |          |-true--> [antivirals]
+ |                     |          |                                           |          |          |          |-true--> Category: die, probability: 100.00%, proportion: 1 / 1
+ |                     |          |                                           |          |          |          `-false-> Category: live, probability: 100.00%, proportion: 1 / 1
+ |                     |          |                                           |          |          `-false-> Category: live, probability: 100.00%, proportion: 1 / 1
+ |                     |          |                                           |          `-false-> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+ |                     |          |                                           `-false-> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+ |                     |          `-false-> Category: die, probability: 100.00%, proportion: 3 / 3
+ |                     `-false-> [antivirals]
+ |                                |-true--> [fatigue]
+ |                                |          |-true--> [age]
+ |                                |          |          |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
+ |                                |          |          `-false-> Category: die, probability: 100.00%, proportion: 1 / 1
+ |                                |          `-false-> [bilirubin]
+ |                                |                     |-true--> [age]
+ |                                |                     |          |-true--> Category: live, probability: 100.00%, proportion: 3 / 3
+ |                                |                     |          `-false-> [female]
+ |                                |                     |                     |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
+ |                                |                     |                     `-false-> [malaise]
+ |                                |                     |                                |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
+ |                                |                     |                                `-false-> [varices]
+ |                                |                     |                                           |-true--> [steroid]
+ |                                |                     |                                           |          |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
+ |                                |                     |                                           |          `-false-> [anorexia]
+ |                                |                     |                                           |                     |-true--> [bigliver]
+ |                                |                     |                                           |                     |          |-true--> Category: die, probability: 100.00%, proportion: 1 / 1
+ |                                |                     |                                           |                     |          `-false-> Category: live, probability: 100.00%, proportion: 1 / 1
+ |                                |                     |                                           |                     `-false-> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+ |                                |                     |                                           `-false-> Category: live, probability: 100.00%, proportion: 1 / 1
+ |                                |                     `-false-> Category: live, probability: 100.00%, proportion: 1 / 1
+ |                                `-false-> [age]
+ |                                           |-true--> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+ |                                           `-false-> [female]
+ |                                                      |-true--> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+ |                                                      `-false-> [steroid]
+ |                                                                 |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
+ |                                                                 `-false-> Category: die, probability: 100.00%, proportion: 1 / 1
+ `-false-> [varices]
+            |-true--> [steroid]
+            |          |-true--> [female]
+            |          |          |-true--> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+            |          |          `-false-> [antivirals]
+            |          |                     |-true--> [fatigue]
+            |          |                     |          |-true--> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+            |          |                     |          `-false-> [bigliver]
+            |          |                     |                     |-true--> [spiders]
+            |          |                     |                     |          |-true--> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+            |          |                     |                     |          `-false-> [malaise]
+            |          |                     |                     |                     |-true--> Category: die, probability: 100.00%, proportion: 1 / 1
+            |          |                     |                     |                     `-false-> [age]
+            |          |                     |                     |                                |-true--> [anorexia]
+            |          |                     |                     |                                |          |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
+            |          |                     |                     |                                |          `-false-> Category: die, probability: 100.00%, proportion: 1 / 1
+            |          |                     |                     |                                `-false-> Category: die, probability: 100.00%, proportion: 1 / 1
+            |          |                     |                     `-false-> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+            |          |                     `-false-> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+            |          `-false-> [bilirubin]
+            |                     |-true--> [female]
+            |                     |          |-true--> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+            |                     |          `-false-> [antivirals]
+            |                     |                     |-true--> [fatigue]
+            |                     |                     |          |-true--> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+            |                     |                     |          `-false-> [malaise]
+            |                     |                     |                     |-true--> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+            |                     |                     |                     `-false-> [bigliver]
+            |                     |                     |                                |-true--> [firmliver]
+            |                     |                     |                                |          |-true--> [spleenpalpable]
+            |                     |                     |                                |          |          |-true--> [sgot]
+            |                     |                     |                                |          |          |          |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
+            |                     |                     |                                |          |          |          `-false-> [age]
+            |                     |                     |                                |          |          |                     |-true--> [anorexia]
+            |                     |                     |                                |          |          |                     |          |-true--> [spiders]
+            |                     |                     |                                |          |          |                     |          |          |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
+            |                     |                     |                                |          |          |                     |          |          `-false-> Category: die, probability: 100.00%, proportion: 1 / 1
+            |                     |                     |                                |          |          |                     |          `-false-> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+            |                     |                     |                                |          |          |                     `-false-> Category: live, probability: 100.00%, proportion: 1 / 1
+            |                     |                     |                                |          |          `-false-> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+            |                     |                     |                                |          `-false-> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+            |                     |                     |                                `-false-> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+            |                     |                     `-false-> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+            |                     `-false-> Category: die, probability: 100.00%, proportion: 1 / 1
+            `-false-> [female]
+                       |-true--> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+                       `-false-> [antivirals]
+                                  |-true--> [fatigue]
+                                  |          |-true--> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+                                  |          `-false-> [bilirubin]
+                                  |                     |-true--> [histology]
+                                  |                     |          |-true--> [age]
+                                  |                     |          |          |-true--> Category: die, probability: 100.00%, proportion: 1 / 1
+                                  |                     |          |          `-false-> [steroid]
+                                  |                     |          |                     |-true--> [firmliver]
+                                  |                     |          |                     |          |-true--> Category: die, probability: 100.00%, proportion: 1 / 1
+                                  |                     |          |                     |          `-false-> [malaise]
+                                  |                     |          |                     |                     |-true--> Category: live, probability: 100.00%, proportion: 1 / 1
+                                  |                     |          |                     |                     `-false-> Category: die, probability: 100.00%, proportion: 2 / 2
+                                  |                     |          |                     `-false-> Category: die, probability: 100.00%, proportion: 1 / 1
+                                  |                     |          `-false-> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+                                  |                     `-false-> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor
+                                  `-false-> Category: live, probability: 81.00%, proportion: 81 / 100  # baseline predictor

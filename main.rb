@@ -118,7 +118,7 @@ if ARGV.size != 2  # no arguments provided
     File.write("./10_runs_result.txt", result)
     puts result
     puts "\n=======================================================\n"
-    puts "\"10_runs_result.txt\" is generated."
+    puts "\"10_runs_result.txt\" is generated.\n"
   end
 
 else
