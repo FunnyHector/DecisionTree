@@ -52,21 +52,21 @@ def run_decision_tree_with(training_set_file, test_set_file)
 
   # print the tree
   ascii_tree = DecisionTreePrinter.new(decision_tree.tree_root).render_tree
-  File.write("./tree.txt", ascii_tree)
-  puts "[NOTICE] Console output might look ugly because of auto-line-wrap. See \"tree.txt\" generated\n"
+  File.write("./sample_output_tree.txt", ascii_tree)
+  puts "[NOTICE] Console output might look ugly because of auto-line-wrap. See \"sample_output_tree.txt\" generated\n"
   puts ascii_tree
   puts "\n=======================================================\n"
-  puts "\"tree.txt\" is generated.\n\n"
+  puts "\"sample_output_tree.txt\" is generated.\n\n"
 
   # categorise the test tet according to the decision tree learned
   decision_tree.categorise_test_set!(test_set)
 
   # print the result from test set
   result = decision_tree.result
-  File.write("./result.txt", result)
+  File.write("./sample_output.txt", result)
   puts result
   puts "\n=======================================================\n"
-  puts "\"result.txt\" is generated.\n"
+  puts "\"sample_output.txt\" is generated.\n"
 
   decision_tree
 end
@@ -115,10 +115,10 @@ if ARGV.size != 2  # no arguments provided
     result << "Average of decision tree accuracies: #{average_of_d_tree_accuracy}%\n"
     result << "Average of baseline accuracies: #{average_of_baseline_accuracy}%\n"
 
-    File.write("./10_runs_result.txt", result)
+    File.write("./sample_output_10_runs.txt", result)
     puts result
     puts "\n=======================================================\n"
-    puts "\"10_runs_result.txt\" is generated.\n"
+    puts "\"sample_output_10_runs.txt\" is generated.\n"
   end
 
 else
